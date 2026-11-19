@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[3,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/AshPapi/minecraft_PapiOptimization/issues"
+
+[[mods]]
+modId = "gluon"
+version = "1.0.0"
+displayName = "Gluon"
+displayURL = "https://github.com/AshPapi/minecraft_PapiOptimization"
+authors = "AshPapi"
+logoFile = "gluon.png"
+iconFile = "gluon.png"
+description = '''
+Gluon is an all-in-one clean-room MIT performance optimization engine for Minecraft 26.3 (NeoForge, Java 25).
+Improves client FPS, server TPS, memory footprint, startup time, and network efficiency while preserving vanilla gameplay mechanics: memory deduplication (block states, shapes, components, quads), wavefront redstone updates, crafting and container epoch caching, lazy DFU compilation, occlusion and LOD culling for entities, block entities and particles, static block entity baking, GUI/font batching, pathfinding/POI/worldgen optimizations, and pooled Netty compression.
+Includes a guarded mixin plugin with automatic compatibility detection for major rendering, lighting, and worldgen mods.
+'''
+
+[[mixins]]
+config = "gluon.mixins.json"
+
+[[dependencies.gluon]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.3,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.gluon]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.3,26.4)"
+ordering = "NONE"
+side = "BOTH"
